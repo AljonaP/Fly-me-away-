@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
-// import logo from '../assets/logoFlyMeAway.jpg';
+
+// import logo from '../src/assets/logoFrlyMeAway.png';
 import { useHistory, Link } from 'react-router-dom';
-import {ContextAuthorization} from '../context/ContextAuthorization';
+import {AuthContext} from '../../context/ContextAuthorization';
 
 // import language from '../assets/flagNL.png';
 
 function TopMenu() {
-    const {logout, authorized} = useContext(ContextAuthorization)
+    const {logout, authorized} = useContext(AuthContext);
     const history = useHistory();
 
     return (

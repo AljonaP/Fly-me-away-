@@ -1,7 +1,8 @@
 import React, {createContext, useState} from 'react';
 import { useHistory } from "react-router-dom";
 
-export const ContextAuthorization = createContext({});
+// export const ContextAuthorization = createContext({});
+export const AuthContext = createContext({});
 
 function ContextAuthorizationProvider({children}) {
     const [isAuth, toggleIsAuth] = useState(false);
@@ -26,10 +27,10 @@ function ContextAuthorizationProvider({children}) {
     }
 
     return (
-        <ContextAuthorization.Provider value={data}>
+        <AuthContext.Provider value={data}>
             {children}
-        </ContextAuthorization.Provider>
+        </AuthContext.Provider>
     );
 }
 
-export default ContextAuthorization;
+export default ContextAuthorizationProvider;

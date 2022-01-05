@@ -24,7 +24,7 @@ function Home() {
     return (
         <>
             <div><h1>DIT IS EEN HOME PAGE</h1></div>
-            <TopMenu/>
+
 
 
             <footer>
