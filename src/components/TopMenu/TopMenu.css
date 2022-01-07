@@ -1,1 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Mohave&family=Rubik:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Mohave&family=Paprika&family=Rubik:wght@300;500;600&display=swap');
 
+nav {
+    background-color: #507AAB;
+
+    display: flex;
+    padding: 0 32px;
+    align-items: center;
+    justify-content: space-between;
+    color: #DAEBEC;
+
+}
+
+/*.hhh {*/
+/*    color: #1EFBD3;*/
+/*    !*nog te checke fonts en font family*!*/
+/*    font-family: Paprika sans-serif ;*/
+/*}*/
+
+#language-img {
+    height: 70px;
+}
+
+.language-currency {
+    display: flex;
+}

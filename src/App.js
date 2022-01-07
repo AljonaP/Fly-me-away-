@@ -18,6 +18,7 @@ import PrivacyPolicyPage from './pages/privacy-policy/Privacy-policy';
 import SearchResultsPage from './pages/search-results/Search-results';
 import TopMenu from './components/TopMenu/TopMenu';
 import {AuthContext} from './context/ContextAuthorization';
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -26,35 +27,38 @@ function App() {
     return (
         <Router>
 
-                    <TopMenu/>
+            <TopMenu/>
 
-                    <Switch>
-                        <Route exact path="/">
-                            <HomePage/>
-                        </Route>
+            <Switch>
+                <Route exact path="/">
+                    <HomePage/>
+                </Route>
 
-                        <Route path="/account-aanmaken">
-                            <CreateAccountPage/>
-                        </Route>
+                <Route path="/account-aanmaken">
+                    <CreateAccountPage/>
+                </Route>
 
-                        <Route path="/inloggen">
-                            <LoginPage/>
-                        </Route>
+                <Route path="/inloggen">
+                    <LoginPage/>
+                </Route>
 
-                        <Route path="/zoekresultaten">
-                            <SearchResultsPage/>
-                            {/*<SearchResultsPage isAuth={isAuthenticated} toggleAuth={toggleIsAuthenticated}/>*/}
-                        </Route>
+                <Route path="/zoekresultaten">
+                    <SearchResultsPage/>
+                    {/*<SearchResultsPage isAuth={isAuthenticated} toggleAuth={toggleIsAuthenticated}/>*/}
+                </Route>
 
-                        <Route exact path="/algemene-voorwaarden">
-                            <GeneralConditionsPage/>
-                        </Route>
+                <Route exact path="/algemene-voorwaarden">
+                    <GeneralConditionsPage/>
+                </Route>
 
-                        <Route exact path="/privacybeleid">
-                            <PrivacyPolicyPage/>
-                        </Route>
+                <Route exact path="/privacybeleid">
+                    <PrivacyPolicyPage/>
+                </Route>
 
-                    </Switch>
+            </Switch>
+
+            <Footer/>
+
 
         </Router>
     );

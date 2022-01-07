@@ -1,8 +1,14 @@
 import React from 'react';
+import {useHistory} from "react-router-dom";
 
 function PrivacyPolicy(props) {
+    let history = useHistory();
     return (
         <div>
+            <button
+                type="button" onClick={()=> history.goBack()}>
+                Ga terug naar de vorige pagina
+            </button>
             <h1>PRIVACYBELEID</h1>
             <p>
                 1.	Donec dignissim volutpat lorem, at scelerisque augue vestibulum quis. Duis rhoncus, justo eu cursus pharetra, magna risus dictum justo, a efficitur eros augue lobortis sapien. Donec pellentesque at elit vitae scelerisque. Aliquam nulla sem, cursus sit amet condimentum nec, volutpat a mi. Donec sem enim, sagittis vitae porta nec, mollis efficitur tortor. Duis arcu purus, ultrices id leo aliquet, mattis imperdiet nisl. Praesent aliquam libero nec sollicitudin tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam tristique interdum laoreet. Aenean blandit posuere odio sed varius. Cras at lectus fermentum, facilisis massa sed, tincidunt ipsum. Cras venenatis erat felis, eu ultricies magna luctus sit amet. Vivamus eleifend magna at urna scelerisque dignissim. Vestibulum mollis tincidunt mi ut fringilla. Pellentesque pellentesque nisi lorem, id aliquam odio tristique nec.

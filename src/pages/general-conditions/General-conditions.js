@@ -1,8 +1,20 @@
 import React from 'react';
+import {useHistory} from "react-router-dom";
+// import Button from "../../components/Button/Button";
+
+
 
 function GeneralConditions(props) {
+    let history = useHistory();
     return (
         <div>
+            {/*<Button type="button" onClick={() => history.goBack()}/>*/}
+
+            <button
+                type="button" onClick={()=> history.goBack()}>
+                Ga terug naar de vorige pagina
+            </button>
+
             <h1>ALGEMENE VOORWAARDEN</h1>
             <p>
                 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id congue erat, ut dignissim sem.
