@@ -1,0 +1,24 @@
+/*.form-create-account {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    background-color: #faeab3;*/
+/*    padding: 32px;*/
+/*    border-color: red;*/
+/*    max-width: 300px;*/
+/*    border-radius: 4px;*/
+/*    margin: 100px;*/
+/*}*/
+
+.form-create-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    padding: 8px 16px;
+    margin: 8px;
+    border: 1px solid black;
+
+}
+
+
+

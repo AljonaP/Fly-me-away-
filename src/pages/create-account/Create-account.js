@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {useHistory} from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import InputField from "../../components/InputField/InputField";
+import './Create-account.css';
 
 
 function CreateAccount() {
@@ -24,13 +25,12 @@ function CreateAccount() {
         Password: ${password},
         Checkbox1: ${checkedTerms},
         Checkbox2: ${checkedNewsletter}
-        
         `)
     }
 
     return (
         <>
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleClick} className="form-create-account">
                 <h1>Account aanmaken</h1>
 
                 <InputField
@@ -72,9 +72,6 @@ function CreateAccount() {
                         checked={checkedTerms === "Terms"}
                         onChange={(e) => toggleCheckedTerms(e.target.value)}/>
 
-
-
-
                 <InputField
                         type="radio"
                         id="checkbox-newsletter"
@@ -83,13 +80,14 @@ function CreateAccount() {
                         checked={checkedNewsletter === "News"}
                         onChange={(e) => toggleCheckedNewsletter(e.target.value)}/>
 
-
                 <button
                     type="submit"
                     className="send-button"
                 >Submit
                 </button>
             </form>
+            <p>Heb je al een account? Je kunt je <Link to="/inloggen">hier</Link> aanmelden.</p>
+
         </>
     );
 }

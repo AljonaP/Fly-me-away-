@@ -4,6 +4,28 @@ footer {
     background-color: #F0DDB4;
     height: 173px;
     font-size: 12px;
+    bottom: 0;
+    position: absolute;
 }
 
+footer input[type=text] {
+    padding: 12px 4px;
+    margin: 16px 0 0;
+    width: 750%;
+    font-size: 18px;
+    outline: none;
+}
+
+footer input[type=text].input-error {
+    border: 1px solid red;
+}
+
+footer button:disabled {
+    background-color: #ededed;
+    color: gray;
+}
+
+textarea {
+    display: block;
+}
 

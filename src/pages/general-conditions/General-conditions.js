@@ -2,8 +2,6 @@ import React from 'react';
 import {useHistory} from "react-router-dom";
 // import Button from "../../components/Button/Button";
 
-
-
 function GeneralConditions(props) {
     let history = useHistory();
     return (

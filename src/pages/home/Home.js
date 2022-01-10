@@ -2,12 +2,10 @@ import React from 'react';
 // import React, {useEffect} from 'react';
 // import {Link} from 'react-router-dom';
 // import axios from "axios";
-import TopMenu from "../../components/TopMenu/TopMenu";
-import Footer from "../../components/Footer/Footer";
 import BackgroundImg from '../../assets/TropicsSeaPalm.jpg';
 
 function Home() {
-    const [contactMessage, setContactMessage] = React.useState('');
+
 
     // useEffect(() => {
     //     async function getData() {
@@ -25,10 +23,8 @@ function Home() {
     return (
         <>
             <h1>DIT IS EEN HOME PAGE</h1>
-            <img src={BackgroundImg}/>
+            <img src={BackgroundImg} className="background-img"/>
 
-
-            {/*<Footer/>*/}
         </>
 
 );

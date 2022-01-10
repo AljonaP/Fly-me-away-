@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import './Footer.css';
 import {Link} from "react-router-dom";
+import InputField from "../InputField/InputField";
 
 function Footer() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [contactMessage, setContactMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [disabled, setDisabled] = useState(false);
@@ -21,8 +24,7 @@ function Footer() {
 
     return (
         <div>
-            <footer className="footer-container">
-
+            <footer>
                     <address>
                         <div>
                             Ons adres:
@@ -57,23 +59,35 @@ function Footer() {
                         </Link>
 
                         van toepassing.
-                        De getoonde prijzen zijn inclusief BTW, maar kunnen varieren bij de vliegticketaanbieder.
+                        De getoonde prijzen zijn inclusief BTW, maar kunnen variëren bij de vliegticketaanbieder.
                     </div>
                     {/* Voor styling zie: https://github.com/hogeschoolnovi/frontend-react-fruit-perfection/blob/stap-6/src/App.css*/}
                     {/* Voor styling zie 3.4 React */}
-                    <form className="contact-form">
-                        <label htmlFor="message">
-                            <input
-                                type="text"
-                                placeholder="Typ hier uw bericht, max 300 tekens"
-                                name="message"
-                                className={contactMessage.length > 300 ? 'input-message-error' : ''}
-                                value={contactMessage}
-                                onChange={(e) => setContactMessage(e.target.value)}
-                            />
-                            contactMessage.length > 300 &&
-                            <p className="input-message-error">Dit bericht is te lang!</p>
-                        </label>
+                    <form className="contact-form">Contact met ons
+                        <InputField
+                            type="text"
+                            id="name"
+                            value={name}
+                            placeholder="Naam"
+                            onChange={(e) => setName(e.target.value)}/>
+
+                        <InputField
+                            type="text"
+                            id="email"
+                            value={email}
+                            placeholder="Email"
+                            onChange={(e) => setEmail(e.target.value)}/>
+
+                        <textarea
+                            placeholder="Typ hier uw bericht, max 300 tekens"
+                            className={contactMessage.length > 300 ? 'error-message' : ''}
+                            value={contactMessage}
+                            onChange={(e) => setContactMessage(e.target.value)}>
+                        {contactMessage.length > 300 &&
+                        <p className="error-message">Dit bericht is te lang!</p>}
+                        </textarea>
+
+
                         <button type="submit" onClick={sendForm} disabled={disableButton()}>
                             Verzend
                         </button>
