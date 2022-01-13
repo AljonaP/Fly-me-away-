@@ -1,14 +1,14 @@
-
 import React, {useContext} from 'react';
-
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from 'react-router-dom';
+import './App.css';
+
 // import {Redirect, useHistory, NavLink, } from 'react-router-dom';
 // import React, {useEffect, useState} from 'react';
-import './App.css';
+
 
 import HomePage from './pages/home/Home'
 import CreateAccountPage from './pages/create-account/Create-account';

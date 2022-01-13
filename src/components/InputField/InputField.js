@@ -1,7 +1,7 @@
 import React from 'react';
 import './InputField.css';
 
-function InputField({ type, id, name, label, className, value, placeholder, name2, onChange, checked }) {
+function InputField({ type, id, name, label, className, value, placeholder, name2, onChange, checked, min }) {
     return (
         <label htmlFor={id}>
             {name}
@@ -14,6 +14,7 @@ function InputField({ type, id, name, label, className, value, placeholder, name
                 placeholder={placeholder}
                 checked={checked}
                 onChange={onChange}
+                min={min}
             />
             {name2}
         </label>

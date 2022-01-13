@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Paprika&family=Patua+One&display=swap');
+
 footer {
     display: flex;
     justify-content: space-between;
     background-color: #F0DDB4;
     height: 173px;
     font-size: 12px;
+    font-family: Patua One, sans-serif;
     bottom: 0;
     position: absolute;
 }
