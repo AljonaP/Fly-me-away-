@@ -1,26 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 // import React, {useEffect} from 'react';
 // import {Link} from 'react-router-dom';
 // import axios from "axios";
 import './Home.css';
 import InputField from "../../components/InputField/InputField";
 import PassengerType from "../../components/PassengerType/PassengerType";
+import axios from "axios";
 
 function Home() {
-
-
-    // useEffect(() => {
-    //     async function getData() {
-    //         try {
-    //             const result = await axios.get('https://partners.api.skyscanner.net/apiservices/')
-    //             console.log(result.data)
-    //         } catch (e) {
-    //             console.error(e)
-    //         }
-    //     }
-    //
-    //     getData();
-    // }, [])
     const [destinationFrom, setDestinationFrom] = useState('');
     const [destinationTo, setDestinationTo] = useState('');
     const [passengerAdult, setPassengerAdult] = useState(1);
@@ -28,9 +15,49 @@ function Home() {
     const [passengerBaby, setPassengerBaby] = useState(0);
     const [ticketClass, toggleTicketClass] = useState('Economy');
 
+    useEffect(() => {
+        async function getData() {
+            // const token = localStorage.getItem('token')
+            try {
+                const result = await axios.get('https://api.klm.com/travel/offers/v1/reference-data?bookingFlow=', {
+                    headers: {
+                        // "Authorization": `Bearer ${token}`,
+                        'Content-Type': 'application/json',
+                        'accept': 'application/hal+json',
+                        'accept-language': 'en-US',
+                        'afkl-travel-country': 'NL',
+                        'afkl-travel-host': 'KL',
+                        'api-key': 'gg6rdsw4d82y9dhppr72w8we',
+                    }
+                })
+                console.log(result.data)
+            } catch (e) {
+                console.error(e)
+            }
+        }
+
+        getData();
+    }, []);
+
+
+    // -H 'accept: application/hal+json' \
+    //             -H 'accept-language: en-US' \
+    //             -H 'afkl-travel-country: NL' \
+    //             -H 'afkl-travel-host: KL' \
+    //             -H 'api-key: testapikey'
+
+
+
+    function onFormSubmit(event) {
+        event.preventDefault();
+        console.log('Submitted!');
+    }
+
+    let today = new Date().toISOString().split('T')[0];
+    // const today = new Date();
     return (
         <div className="Homepage-body">
-            <form className="form-vluchten">
+            <form onSubmit={onFormSubmit} className="form-vluchten">
                 <h1>Vluchten</h1>
                 <section className="destination">
                     <InputField
@@ -59,10 +86,14 @@ function Home() {
                 <section>
                     <InputField
                         name="Heen"
-                        type="date"/>
+                        type="date"
+                        id="outbound-date-to"
+                        min={today}
+                    />
                     <InputField
                         name="Terug"
-                        type="date"/>
+                        type="date"
+                    />
                 </section>
                 <section>
                     <h4>Passagiers</h4>

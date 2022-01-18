@@ -18,6 +18,7 @@ function Login(){
         Password: ${password},
         `)
     }
+
     return (
         <>
             <form onSubmit={handleClick}>
@@ -30,7 +31,7 @@ function Login(){
                     onChange={(e) => setEmail(e.target.value)}/>
 
                 <InputField
-                    type="text"
+                    type="password"
                     id="password"
                     name="Wachtwoord"
                     value={password}

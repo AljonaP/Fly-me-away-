@@ -5,6 +5,7 @@ footer {
     justify-content: space-between;
     background-color: #F0DDB4;
     height: 173px;
+    width: 100%;
     font-size: 12px;
     font-family: Patua One, sans-serif;
     bottom: 0;
@@ -14,7 +15,7 @@ footer {
 footer input[type=text] {
     padding: 12px 4px;
     margin: 16px 0 0;
-    width: 750%;
+    width: 75%;
     font-size: 18px;
     outline: none;
 }
