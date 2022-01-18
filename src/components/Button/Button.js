@@ -1,14 +1,15 @@
 import React from 'react';
-import 'Button.css';
+// import 'Button.css';
 
-function Button(props) {
+function Button({ type, name, className, onClick, disabled }) {
     return (
         <button
-            type={props.type}
-            className={props.className}
-            onClick={props.onClick}
-            disabled={props.onDisabled}
-        >{props.nameOfButton}
+            type={type}
+            name={name}
+            className={className}
+            onClick={onClick}
+            disabled={disabled}
+        >{name}
         </button>
     );
 }

@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 // import {Link} from 'react-router-dom';
 // import axios from "axios";
 import './Home.css';
+import Button from "../../components/Button/Button";
 import InputField from "../../components/InputField/InputField";
 import PassengerType from "../../components/PassengerType/PassengerType";
 import axios from "axios";
@@ -114,7 +115,7 @@ function Home() {
                     </select>
                 </section>
 
-                <button name="Zoeken" type="submit">Zoeken</button>
+                <Button name="Zoeken" type="submit"/>
 
             </form>
 
