@@ -1,4 +1,5 @@
-import React, {useContext} from 'react';
+import React from 'react';
+// import {useContext} from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -17,12 +18,12 @@ import GeneralConditionsPage from './pages/general-conditions/General-conditions
 import PrivacyPolicyPage from './pages/privacy-policy/Privacy-policy';
 import SearchResultsPage from './pages/search-results/Search-results';
 import TopMenu from './components/TopMenu/TopMenu';
-import {AuthContext} from './context/ContextAuthorization';
+// import {AuthContext} from './context/ContextAuthorization';
 import Footer from "./components/Footer/Footer";
 
 
 function App() {
-    const {authorized} = useContext(AuthContext);
+    // const {isAuth} = useContext(AuthContext);
 
     return (
         <Router>

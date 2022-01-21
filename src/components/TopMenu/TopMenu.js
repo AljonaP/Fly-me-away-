@@ -2,11 +2,12 @@ import React, {useContext} from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import {AuthContext} from '../../context/ContextAuthorization';
 import './TopMenu.css';
+import Button from "../Button/Button";
 import language from '../../assets/flagNL.png';
 import logo from '../../assets/logoFlyMeAway.png';
 
 function TopMenu() {
-    const {logout, authorized} = useContext(AuthContext);
+    const {logout, isAuth} = useContext(AuthContext);
     const history = useHistory();
 
     return (
@@ -15,39 +16,35 @@ function TopMenu() {
                 <img src={language} alt="taal" id="language-img"/>
                 <h2 className="currency">EUR</h2>
             </span>
-
             <Link to="/">
                     <span className="logo-container">
                     <img src={logo} alt="logo-FlyMeAway"/>
                     </span>
             </Link>
-
-                {authorized ?
-                    <button type="button"
-                            className="button-topmenu"
-                            onClick={logout}
-                    >logout
-                    </button> :
-                    <div>
-                        <button
-                            type="button"
-                            className="button-topmenu"
-                            onClick={() => history.push('/account-aanmaken')}
-                        >
-                            Registreren
-                        </button>
-                        <button
-                            type="button"
-                            className="button-topmenu"
-                            onClick={() => history.push('/inloggen')}
-                        >
-                            Aanmelden
-                        </button>
-
-                    </div>
-                }
+            {isAuth ?
+                <Button type="button"
+                        name="Uitloggen"
+                        className="button-topmenu"
+                        onClick={logout}
+                />
+                :
+                <div>
+                    <Button
+                        type="button"
+                        name="Registreren"
+                        className="button-topmenu"
+                        onClick={() => history.push('/account-aanmaken')}
+                    />
+                    <Button
+                        type="button"
+                        name="Aanmelden"
+                        className="button-topmenu"
+                        onClick={() => history.push('/inloggen')}
+                    />
+                </div>
+            }
         </nav>
-);
+    );
 }
 
 export default TopMenu;

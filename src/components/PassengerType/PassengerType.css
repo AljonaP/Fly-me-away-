@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Paprika&family=Patua+One&display=swap');
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Patua One, sans-serif;
+    font-size: 1.25em;
+}
+article button{
+    margin: 0 8px;
+    padding: 2px 8px;
+    font-size: 16px;
+    width: auto;
+}

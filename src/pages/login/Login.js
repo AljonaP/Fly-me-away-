@@ -1,34 +1,53 @@
-import React, {useState} from 'react';
-import {useHistory} from "react-router-dom";
+import React, {useState, useContext} from 'react';
+import {Link, useHistory} from "react-router-dom";
+import {AuthContext} from "../../context/ContextAuthorization";
+import axios from "axios";
+import Button from "../../components/Button/Button";
 import InputField from "../../components/InputField/InputField";
+import './Login.css';
 
 
 function Login(){
-    const [email, setEmail] = useState("");
+    const { login } = useContext(AuthContext);
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [clicked, toggleClicked] = useState(false);
+    // const [clicked, toggleClicked] = useState(false);
     let history = useHistory();
 
-    function handleClick(e) {
+    async function handleClick(e) {
         e.preventDefault()
-        toggleClicked(!clicked)
-        history.push("/")
+        // toggleClicked(!clicked)
+        // history.push("/")
         console.log(`
-        Email: ${email},
+        Username: ${username},
         Password: ${password},
         `)
+        try {
+            const result = await axios.post('https://frontend-educational-backend.herokuapp.com/api/auth/signin', {
+                username: username,
+                password: password,
+            });
+            console.log(result.data) //komt de accesToken uit
+            login(result.data.accessToken); //geven we de accesToken aan de login
+            console.log(result.data.accessToken);
+            history.push("/");
+        } catch (e) {
+            console.error(e);
+            console.log(e.response); //geeft in Backend (in Console) welke fout er precies is
+        }
+
     }
 
     return (
         <>
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleClick} className="form-create-account-login">
                 <h1>Aanmelden</h1>
                 <InputField
                     type="text"
-                    id="email"
-                    name="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}/>
+                    id="username"
+                    name="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}/>
 
                 <InputField
                     type="password"
@@ -36,12 +55,13 @@ function Login(){
                     name="Wachtwoord"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}/>
-                <button
+                <Button
+                    name="Submit"
                     type="submit"
                     className="send-button"
-                >Submit
-                </button>
+                />
             </form>
+            <p>Heb je nog geen account? <Link to="/account-aanmaken">Registreer</Link> je dan eerst.</p>
         </>
     );
 }
