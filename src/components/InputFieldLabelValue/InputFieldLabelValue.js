@@ -1,19 +1,23 @@
 import React from 'react';
+import './InputFieldLabelValue.css';
 
-function InputFieldCheckbox({ type, id, name, label, className, value, onChange }) {
+function InputFieldLabelValue({type, id, name, className, value, placeholder, onChange, checked, min}) {
     return (
         <label htmlFor={id}>
-            {name}
+            {value}
             <input
                 type={type}
                 id={id}
                 className={className}
                 name={name}
                 value={value}
+                placeholder={placeholder}
+                checked={checked}
                 onChange={onChange}
+                min={min}
             />
         </label>
     );
 }
 
-export default InputFieldLabelName;
+export default InputFieldLabelValue;

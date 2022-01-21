@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import { useHistory, Link } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import InputField from "../../components/InputField/InputField";
+import InputFieldLabelName from "../../components/InputFieldLabelName/InputFieldLabelName";
 import './Create-account.css';
 import axios from "axios";
 
 
 function CreateAccount() {
-    // const [firstName, setFirstName] = useState("");
-    // const [surname, setSurname] = useState("");
+
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -51,45 +50,45 @@ function CreateAccount() {
         <>
             <form onSubmit={handleClick} className="form-create-account-login">
                 <h1>Account aanmaken</h1>
-                {/*<InputField*/}
+                {/*<InputFieldLabelName*/}
                 {/*    type="text"*/}
                 {/*    id="firstname"*/}
                 {/*    name="Voornaam"*/}
                 {/*    value={firstName}*/}
                 {/*    onChange={(e) => setFirstName(e.target.value)}/>*/}
-                {/*<InputField*/}
+                {/*<InputFieldLabelName*/}
                 {/*    type="text"*/}
                 {/*    id="surname"*/}
                 {/*    name="Achternaam"*/}
                 {/*    value={surname}*/}
                 {/*    onChange={(e) => setSurname(e.target.value)}/>*/}
-                <InputField
+                <InputFieldLabelName
                     type="text"
                     id="username"
                     name="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}/>
 
-                <InputField
+                <InputFieldLabelName
                     type="text"
                     id="email"
                     name="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/>
-                <InputField
+                <InputFieldLabelName
                     type="text"
                     id="password"
                     name="Wachtwoord"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}/>
-                {/*<InputField*/}
+                {/*<InputFieldLabelName*/}
                 {/*    type="radio"*/}
                 {/*    id="checkbox-terms"*/}
                 {/*    name2="Ik accepteer het Privacy beleid en de Algemene Voorwaarden"*/}
                 {/*    value="Terms"*/}
                 {/*    checked={checkedTerms === "Terms"}*/}
                 {/*    onChange={(e) => toggleCheckedTerms(e.target.value)}/>*/}
-                {/*<InputField*/}
+                {/*<InputFieldLabelName*/}
                 {/*    type="radio"*/}
                 {/*    id="checkbox-newsletter"*/}
                 {/*    name2="Ik meld me aan voor de nieuwsbrief"*/}

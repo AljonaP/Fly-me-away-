@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './Footer.css';
 import {Link} from "react-router-dom";
-import InputField from "../InputField/InputField";
+import InputFieldLabelName from "../InputFieldLabelName/InputFieldLabelName";
 
 function Footer() {
     const [name, setName] = useState("");
@@ -64,14 +64,14 @@ function Footer() {
                     {/* Voor styling zie: https://github.com/hogeschoolnovi/frontend-react-fruit-perfection/blob/stap-6/src/App.css*/}
                     {/* Voor styling zie 3.4 React */}
                     <form className="contact-form">Contact met ons
-                        <InputField
+                        <InputFieldLabelName
                             type="text"
                             id="name"
                             value={name}
                             placeholder="Naam"
                             onChange={(e) => setName(e.target.value)}/>
 
-                        <InputField
+                        <InputFieldLabelName
                             type="text"
                             id="email"
                             value={email}

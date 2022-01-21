@@ -44,7 +44,7 @@ function App() {
 
                 <Route path="/zoekresultaten">
                     <SearchResultsPage/>
-                    {/*<SearchResultsPage isAuth={isAuthenticated} toggleAuth={toggleIsAuthenticated}/>*/}
+                    {/*<SearchResultsPage isAuth={isAuth} toggleAuth={toggleIsAuth}/>*/}
                 </Route>
 
                 <Route exact path="/algemene-voorwaarden">

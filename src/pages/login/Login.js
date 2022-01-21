@@ -3,7 +3,7 @@ import {Link, useHistory} from "react-router-dom";
 import {AuthContext} from "../../context/ContextAuthorization";
 import axios from "axios";
 import Button from "../../components/Button/Button";
-import InputField from "../../components/InputField/InputField";
+import InputFieldLabelName from "../../components/InputFieldLabelName/InputFieldLabelName";
 import './Login.css';
 
 
@@ -42,14 +42,14 @@ function Login(){
         <>
             <form onSubmit={handleClick} className="form-create-account-login">
                 <h1>Aanmelden</h1>
-                <InputField
+                <InputFieldLabelName
                     type="text"
                     id="username"
                     name="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}/>
 
-                <InputField
+                <InputFieldLabelName
                     type="password"
                     id="password"
                     name="Wachtwoord"

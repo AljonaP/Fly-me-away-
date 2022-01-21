@@ -19,7 +19,7 @@ function ContextAuthorizationProvider({children}) {
         const decode = jwt_decode(JWT);
         console.log(decode.sub);
         getUserData(decode.sub,JWT, '/'); //bij banana-sec naar '/profile'
-        // history.push('/');
+        history.push('/');
     }
     // useEffect(() => {
     //     console.log('context wordt gerefresht!')
