@@ -15,7 +15,7 @@ function Login(){
     let history = useHistory();
 
     async function handleClick(e) {
-        e.preventDefault()
+        e.preventDefault();
         // toggleClicked(!clicked)
         // history.push("/")
         console.log(`

@@ -18,7 +18,6 @@ import GeneralConditionsPage from './pages/general-conditions/General-conditions
 import PrivacyPolicyPage from './pages/privacy-policy/Privacy-policy';
 import SearchResultsPage from './pages/search-results/Search-results';
 import TopMenu from './components/TopMenu/TopMenu';
-// import {AuthContext} from './context/ContextAuthorization';
 import Footer from "./components/Footer/Footer";
 
 

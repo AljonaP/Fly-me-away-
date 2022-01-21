@@ -19,10 +19,8 @@ function ContextAuthorizationProvider({children}) {
         const decode = jwt_decode(JWT);
         console.log(decode.sub);
         getUserData(decode.sub,JWT, '/'); //bij banana-sec naar '/profile'
-        // toggleIsAuth(true);
-        history.push('/');
+        // history.push('/');
     }
-
     // useEffect(() => {
     //     console.log('context wordt gerefresht!')
     //     const token = localStorage.getItem('token')
@@ -37,7 +35,6 @@ function ContextAuthorizationProvider({children}) {
     //         })
     //     }
     // }, []);
-
     function logout(){
         localStorage.clear();
         console.log("Gebruiker is uitgelogd!");
@@ -53,7 +50,6 @@ function ContextAuthorizationProvider({children}) {
         // history.push('/');
 
     async function getUserData(id, token, redirect){
-
         try {
             const result = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`,
                 {headers: {
@@ -70,8 +66,6 @@ function ContextAuthorizationProvider({children}) {
                 },
                 status: 'done'
             });
-
-
             history.push(redirect);
         } catch (e) {
             console.error(e);

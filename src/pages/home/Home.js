@@ -23,12 +23,12 @@ function Home() {
             setLoading(true);
             const token = localStorage.getItem('token')
             try {
-                const result = await axios.get('https://api.airfranceklm.com/opendata/offers/v1/search-context', {
+                const result = await axios.post('https://api.airfranceklm.com/opendata/offers/v1/search-context', {
                     headers: {
                         "Authorization": `Bearer ${token}`,
                         'Content-Type': 'application/json',
                         'Accept': 'application/json',
-                        'Accept-language': 'en-US',
+                        'Accept-language': 'nl-NL',
                         'Afkl-travel-country': 'NL',
                         'Afkl-travel-host': 'KL',
                         'api-key': 'gg6rdsw4d82y9dhppr72w8we',
@@ -41,7 +41,7 @@ function Home() {
         }
         getData();
     }, []);
-    if (loading) return `loading...`
+    // if (loading) return `loading...`
 
 
     // -H 'accept: application/hal+json' \
